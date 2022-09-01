@@ -26,7 +26,6 @@ export type RootTabParamList = {
 	Home: undefined;
 	Basket: undefined;
 	Setup: undefined;
-	Products: { category: string; sort?: string };
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<

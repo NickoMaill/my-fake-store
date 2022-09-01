@@ -29,7 +29,7 @@ const linking: LinkingOptions<RootStackParamList> = {
 			Error: "Error",
 			NotFound: "*",
 			Info: "Info",
-			Products: "Products"
+			Products: "Products",
 		},
 	},
 };

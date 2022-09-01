@@ -15,5 +15,6 @@ export const resources: ResourceLanguageType = {
 	},
 	common: {
 		refresh: "rafraîchir",
+		units: "€"
 	},
 };

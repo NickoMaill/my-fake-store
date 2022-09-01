@@ -24,13 +24,13 @@ export default function BottomTabNavigator() {
 			<BottomTab.Screen
 				name="Basket"
 				component={Basket}
-				options={{ title: "Panier", tabBarIcon: ({ color }) => <TabBarIcon name="shopping-cart" color={color} /> }}
+				options={{ title: "PANIER", tabBarIcon: ({ color }) => <TabBarIcon name="shopping-cart" color={color} /> }}
 			/>
 			<BottomTab.Screen
 				name="Home"
 				component={Home}
 				options={({ navigation }: RootTabScreenProps<"Home">) => ({
-					title: "Shop",
+					title: "SHOP",
 					tabBarIcon: ({ color }) => <TabBarIcon name="shopping-bag" color={color} />,
 				})}
 			/>
@@ -38,10 +38,10 @@ export default function BottomTabNavigator() {
 				name="Setup"
 				component={Setup}
 				options={({ navigation }: RootTabScreenProps<"Setup">) => ({
-					title: "Réglages",
+					title: "REGLAGES",
 					tabBarIcon: ({ color }) => <TabBarIcon name="gears" color={color} />,
 					headerLeft: () => (
-						<TouchableOpacity onPress={() => navigation.navigate("Home")}>
+						<TouchableOpacity onPress={() => navigation.goBack()}>
 							<FontAwesome
 								name="arrow-left"
 								size={25}

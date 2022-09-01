@@ -10,7 +10,8 @@ const url = "https://fakestoreapi.com/products/categories";
 export default function HomeCategory() {
 	const { data, error, isLoading, refreshData } = useFetch(url, "GET");
 	const navigate = useNavigation()
-
+	console.log(data);
+	
 	const refresh = useCallback(() => {
         refreshData()
 	}, []);
@@ -21,7 +22,7 @@ export default function HomeCategory() {
 				<FlatList
 					refreshControl={<RefreshControl refreshing={isLoading} onRefresh={refresh} />}
 					data={data}
-					renderItem={(cat: ListRenderItemInfo<any>) => <Category cat={cat.item} onPress={() => navigate.navigate('Products', { category: cat.item })}/>}
+					renderItem={(cat: ListRenderItemInfo<any>) => <Category cat={cat.item} onPress={() => navigate.navigate('Products', { category: cat.item })} />}
 					keyExtractor={(_data, i) => i.toString()}
 				/>
 			)}

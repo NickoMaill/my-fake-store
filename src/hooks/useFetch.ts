@@ -3,7 +3,7 @@ import { ResponseApiProduct } from "../types/types";
 
 export default function useFetch(url: string, method?: "GET" | "POST" | "PUT" | "DELETE", headers?: HeadersInit_) {
 	const [data, setData] = useState<any[]>(null);
-	const [error, setError] = useState<ErrorInfo>(null);
+	const [error, setError] = useState<any>(null);
 	const [isLoading, setIsLoading] = useState<boolean>(null);
 	const getData = () => {
 		setIsLoading(true);
@@ -12,8 +12,8 @@ export default function useFetch(url: string, method?: "GET" | "POST" | "PUT" | 
 			.then((res) => res.json())
 			.then((res: ResponseApiProduct[]) => setData(res))
 			.finally(() => setIsLoading(false))
-			.catch((err) => {
-				console.log(err);
+			.catch((err: Error) => {
+				console.log("error", url, err.message);
 				setError(err);
 			});
 	};

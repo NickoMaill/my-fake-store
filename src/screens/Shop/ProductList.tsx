@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 
 export default function ProductList(props: { data: ResponseApiProduct[]; isLoading: boolean, refresh: () => void }) {
 	return (
-		<View>
+		<>
 			{!props.isLoading && (
 				<FlatList
                 refreshControl={<RefreshControl refreshing={props.isLoading} onRefresh={props.refresh} />}
@@ -14,6 +14,6 @@ export default function ProductList(props: { data: ResponseApiProduct[]; isLoadi
 					keyExtractor={(_data, i) => i.toString()}
 				/>
 			)}
-		</View>
+		</>
 	);
 }
