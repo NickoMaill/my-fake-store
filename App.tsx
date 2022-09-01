@@ -1,10 +1,9 @@
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import Navigation from "./router";
-import useCachedResources from "./hooks/useCachedResources";
-import useColorScheme from "./hooks/useColorScheme";
-import { registerRootComponent } from "expo";
+import Navigation from "./src/router";
+import useCachedResources from "./src/hooks/useCachedResources";
+import useColorScheme from "./src/hooks/useColorScheme";
 
-function App() {
+export default function App() {
 	const isLoadingComplete = useCachedResources();
 	const colorScheme = useColorScheme();
 
@@ -18,5 +17,3 @@ function App() {
 		);
 	}
 }
-
-export default registerRootComponent(App)
