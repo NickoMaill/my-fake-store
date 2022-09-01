@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "myFakeStore",
+    "entrypoint": "./src/App.tsx",
     "slug": "myFakeStore",
     "version": "1.0.0",
     "orientation": "portrait",
