@@ -4,13 +4,14 @@ import { FlatList, ListRenderItemInfo, RefreshControl, Text, View } from "react-
 import ErrorDetails from "../../components/common/ErrorDetails";
 import Category from "../../components/layouts/Category";
 import useFetch from "../../hooks/useFetch";
+import { resources } from "../../i18n/fr";
+import SettingsBar from "../Shop/SettingsBar";
 
 const url = "https://fakestoreapi.com/products/categories";
 
 export default function HomeCategory() {
 	const { data, error, isLoading, refreshData } = useFetch(url, "GET");
 	const navigate = useNavigation()
-	console.log(data);
 	
 	const refresh = useCallback(() => {
         refreshData()

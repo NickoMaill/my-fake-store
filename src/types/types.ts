@@ -15,6 +15,7 @@ export type RootStackParamList = {
 	Info: undefined;
 	NotFound: undefined;
 	Error: undefined;
+	Product: { productId: number, nameItem: string };
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<
@@ -27,6 +28,7 @@ export type RootTabParamList = {
 	Basket: undefined;
 	Setup: undefined;
 };
+
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
 	BottomTabScreenProps<RootTabParamList, Screen>,
@@ -42,6 +44,13 @@ export enum CatEnum {
 
 export type ResponseApiFetch = {
 	data: ResponseApiProduct[];
+	error: ErrorInfo;
+	isLoading: boolean;
+	refreshData: () => void;
+};
+
+export type ResponseApiFetch2 = {
+	data: ResponseApiProduct;
 	error: ErrorInfo;
 	isLoading: boolean;
 	refreshData: () => void;

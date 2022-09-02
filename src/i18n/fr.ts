@@ -13,8 +13,12 @@ export const resources: ResourceLanguageType = {
 	Error: {
 		commonError: "Une erreur est survenue, essayez de rafraîchir l'application",
 	},
+	products: {
+		filterLabel: "Trier par",
+	},
 	common: {
 		refresh: "rafraîchir",
-		units: "€"
+		units: "€",
+		back: "Retour",
 	},
 };

@@ -30,6 +30,7 @@ const linking: LinkingOptions<RootStackParamList> = {
 			NotFound: "*",
 			Info: "Info",
 			Products: "Products",
+			Product: "Product",
 		},
 	},
 };

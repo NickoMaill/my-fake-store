@@ -11,8 +11,12 @@ export type ResourceLanguageType = {
 	Error: {
 		commonError;
 	};
+	products: {
+		filterLabel;
+	}
 	common: {
 		refresh;
         units;
+		back;
 	};
 };

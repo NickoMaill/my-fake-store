@@ -4,7 +4,7 @@ import { Image, View } from "react-native";
 const filledStar: string = "https://github.com/tranhonghan/images/blob/main/star_filled.png?raw=true";
 const cornerStar: string = "https://raw.githubusercontent.com/tranhonghan/images/main/star_corner.png";
 
-export default function StarRating(props: { rate: number; color: string; size: number }) {
+export default function StarRating(props: { rate: number; color?: string; size?: number }) {
 	return (
 		<View style={{ flex: 1, flexDirection: "row" }}>
 			{1 - props.rate > 0 ? (

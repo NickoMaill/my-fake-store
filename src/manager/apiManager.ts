@@ -14,7 +14,6 @@ export const getRequest = async (path: string, params?: {}, headers?: {}) => {
 		method: "GET",
 		headers: header,
 	});
-	console.log(response);
 	return response.json();
 };
 
