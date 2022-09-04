@@ -10,6 +10,11 @@ export type ResourceLanguageType = {
 	};
 	Error: {
 		commonError;
+		resourcesError;
+		getError;
+		postError;
+		putError;
+		deleteError;
 	};
 	products: {
 		filterLabel;

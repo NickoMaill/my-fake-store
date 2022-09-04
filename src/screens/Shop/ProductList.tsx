@@ -11,7 +11,7 @@ export default function ProductList(props: { data: ResponseApiProduct[]; isLoadi
 			{!props.isLoading && (
 				<FlatList
 					refreshControl={<RefreshControl refreshing={props.isLoading} onRefresh={props.refresh} />}
-					ListHeaderComponent={<SettingsBar order="highRate" label={resources.products.filterLabel} data={props.data}/>}
+					// ListHeaderComponent={<SettingsBar order="highRate" label={resources.products.filterLabel} data={props.data}/>}
 					data={props.data}
 					renderItem={(product: ListRenderItemInfo<ResponseApiProduct>) => ( <ProductCard data={product.item} /> )}
 					keyExtractor={(_data, i) => i.toString()}

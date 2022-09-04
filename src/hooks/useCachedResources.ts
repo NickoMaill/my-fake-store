@@ -17,7 +17,6 @@ export default function useCachedResources() {
             setIsLoadingComplete(true);
             SplashScreen.hideAsync();
         }).catch((error) => {
-            console.error("init resources error");
             throw new Error("an happened while charging resources");
         })
 	};

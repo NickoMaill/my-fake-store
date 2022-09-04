@@ -13,7 +13,7 @@ export default function ProductCard(props: { data: ResponseApiProduct }) {
 	return (
 		<TouchableOpacity style={productsStyle.cardContainer} onPress={() => navigation.navigate("Product", { productId: props.data.id, nameItem: props.data.title })}>
 			<Bold style={{ marginBottom: 15 }}>{props.data.title}</Bold>
-			<View style={productsStyle.cardContent}>,0
+			<View style={productsStyle.cardContent}>
         <View style={productsStyle.priceContainer}>
 				  <Bold style={{ marginVertical: 10 }}>{props.data.price} {resources.common.units}</Bold>
 				  <StarRating rate={props.data.rating.rate} color={Color.light.tint} size={20} />

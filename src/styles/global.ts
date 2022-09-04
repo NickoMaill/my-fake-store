@@ -36,6 +36,23 @@ export const errorStyle = StyleSheet.create({
 	},
 });
 
+export const autoSizeImage = StyleSheet.create({
+	squareView: {
+		backgroundColor: "#fff",
+		alignItems: "center",
+		justifyContent: "center",
+		shadowColor: "#000",
+		shadowOffset: {
+			width: 0,
+			height: 8,
+		},
+		shadowOpacity: 0.46,
+		shadowRadius: 11.14,
+		elevation: 17,
+		borderRadius: 10
+	},
+});
+
 export const homeStyles = StyleSheet.create({
 	categoryCardContainer: {
 		flex: 1,
