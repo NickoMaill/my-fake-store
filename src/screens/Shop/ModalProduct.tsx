@@ -56,10 +56,10 @@ export default function ModalProduct({ route }: RootStackScreenProps<"Product">)
 							<Regular>{data.description}</Regular>
 						</View>
 					</ScrollView>
-					<Modal visible={isOpen} transparent={true}>
+					<Modal animationType="fade" visible={isOpen} transparent={true}>
 						<Pressable onPress={openCloseModal}
 							style={{ alignItems: "center", justifyContent: "center", position: "absolute", zIndex: 3, left: 0, top: 0, width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.4)" }}>
-						<TouchableOpacity style={{ backgroundColor: "#fff", padding: 10, paddingHorizontal: 13, borderRadius: 100, position: "absolute", top: 30 , right: 30 }}>
+						<TouchableOpacity onPress={openCloseModal} style={{ backgroundColor: "#fff", padding: 10, paddingHorizontal: 13, borderRadius: 100, position: "absolute", top: 30 , right: 30 }}>
 							<FontAwesome name="close" size={30} color="#000"/>
 						</TouchableOpacity>
 							<Pressable onPress={e => e.stopPropagation()}>
