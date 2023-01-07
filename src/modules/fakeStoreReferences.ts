@@ -1,9 +1,9 @@
 class FakeStoreReferences {
-    protected readonly baseUrl: string
-    
+    protected readonly baseUrl: string;
+
     constructor() {
-        this.baseUrl = "https://fakestoreapi.com"
+        this.baseUrl = 'https://fakestoreapi.com';
     }
 }
 
-export default FakeStoreReferences
+export default FakeStoreReferences;

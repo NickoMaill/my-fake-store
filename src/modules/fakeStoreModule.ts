@@ -1,9 +1,9 @@
-import * as apiManager from "../manager/apiManager";
+import * as apiManager from '../manager/apiManager';
 
 export const getAllCatalog = async () => {
-    return await apiManager.getRequest("/products")
-}
+    return await apiManager.getRequest('/products');
+};
 
 export const getOneProduct = async (id: number) => {
-    return await apiManager.getRequest(`/products/${id}`)
-}
+    return await apiManager.getRequest(`/products/${id}`);
+};

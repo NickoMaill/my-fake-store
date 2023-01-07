@@ -1,69 +1,53 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import useColorScheme from "../hooks/useColorScheme";
-import Color from "../constants/Color";
-import Basket from "../screens/Basket";
-import Home from "../screens/Home";
-import Setup from "../screens/Setup";
-import { RootTabParamList, RootTabScreenProps } from "../types/types";
-import TabBarIcon from "./TabBarIcon";
-import { TouchableOpacity } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import useColorScheme from '../hooks/useColorScheme';
+import Color from '../constants/Color';
+import Basket from '../screens/Basket';
+import Home from '../screens/Home';
+import Setup from '../screens/Setup';
+import { RootTabParamList, RootTabScreenProps } from '../types/types';
+import TabBarIcon from './TabBarIcon';
+import { TouchableOpacity } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
 
 export default function BottomTabNavigator() {
-	const BottomTab = createBottomTabNavigator<RootTabParamList>();
-	const colorScheme = useColorScheme();
+    const BottomTab = createBottomTabNavigator<RootTabParamList>();
+    const colorScheme = useColorScheme();
 
-	return (
-		<BottomTab.Navigator
-			initialRouteName="Home"
-			screenOptions={{
-				tabBarActiveTintColor: Color[colorScheme].tint,
-				headerStyle: { backgroundColor: "transparent" },
-			}}
-		>
-			<BottomTab.Screen
-				name="Basket"
-				component={Basket}
-				options={{ title: "PANIER", tabBarIcon: ({ color }) => <TabBarIcon name="shopping-cart" color={color} /> }}
-			/>
-			<BottomTab.Screen
-				name="Home"
-				component={Home}
-				options={({ navigation }: RootTabScreenProps<"Home">) => ({
-					title: "SHOP",
-					tabBarIcon: ({ color }) => <TabBarIcon name="shopping-bag" color={color} />,
-				})}
-			/>
-			<BottomTab.Screen
-				name="Setup"
-				component={Setup}
-				options={({ navigation }: RootTabScreenProps<"Setup">) => ({
-					title: "REGLAGES",
-					tabBarIcon: ({ color }) => <TabBarIcon name="gears" color={color} />,
-					headerLeft: () => (
-						<TouchableOpacity onPress={() => navigation.goBack()}>
-							<FontAwesome
-								name="arrow-left"
-								size={25}
-								color={Color[colorScheme].text}
-								style={{ marginLeft: 15 }}
-							/>
-						</TouchableOpacity>
-					),
-					headerRight: () => (
-						<TouchableOpacity onPress={() => navigation.navigate("Info")}>
-							<FontAwesome
-								name="info-circle"
-								size={25}
-								color={Color[colorScheme].text}
-								style={{ marginRight: 15 }}
-							/>
-						</TouchableOpacity>
-					),
-					
-				})
-			}
-			/>
-		</BottomTab.Navigator>
-	);
+    return (
+        <BottomTab.Navigator
+            initialRouteName="Home"
+            screenOptions={{
+                tabBarActiveTintColor: Color[colorScheme].tint,
+                headerStyle: { backgroundColor: 'transparent' },
+            }}
+        >
+            <BottomTab.Screen name="Basket" component={Basket} options={{ title: 'PANIER', tabBarIcon: ({ color }) => <TabBarIcon name="shopping-cart" color={color} /> }} />
+            <BottomTab.Screen
+                name="Home"
+                component={Home}
+                options={({ navigation }: RootTabScreenProps<'Home'>) => ({
+                    title: 'SHOP',
+                    tabBarIcon: ({ color }) => <TabBarIcon name="shopping-bag" color={color} />,
+                })}
+            />
+            <BottomTab.Screen
+                name="Setup"
+                component={Setup}
+                options={({ navigation }: RootTabScreenProps<'Setup'>) => ({
+                    title: 'REGLAGES',
+                    tabBarIcon: ({ color }) => <TabBarIcon name="gears" color={color} />,
+                    headerLeft: () => (
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
+                            <FontAwesome name="arrow-left" size={25} color={Color[colorScheme].text} style={{ marginLeft: 15 }} />
+                        </TouchableOpacity>
+                    ),
+                    headerRight: () => (
+                        <TouchableOpacity onPress={() => navigation.navigate('Info')}>
+                            <FontAwesome name="info-circle" size={25} color={Color[colorScheme].text} style={{ marginRight: 15 }} />
+                        </TouchableOpacity>
+                    ),
+                })}
+            />
+        </BottomTab.Navigator>
+    );
 }

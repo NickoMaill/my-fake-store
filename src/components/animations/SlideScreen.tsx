@@ -1,9 +1,9 @@
 import { useFocusEffect } from '@react-navigation/native';
-import { ReactElement, useRef } from 'react'
-import { Animated, Dimensions } from 'react-native'
+import { ReactElement, useRef } from 'react';
+import { Animated, Dimensions } from 'react-native';
 
 export default function SlideScreen(props: { children }) {
-    const { width, height } = Dimensions.get("window")
+    const { width, height } = Dimensions.get('window');
     const slideAnime = useRef(new Animated.Value(0)).current;
 
     useFocusEffect(() => {
@@ -17,12 +17,8 @@ export default function SlideScreen(props: { children }) {
                 toValue: 0,
                 duration: 500,
                 useNativeDriver: true,
-            })
-        }
-    })
-  return (
-    <Animated.View style={{ flex: 1, transform: [{ translateX: slideAnime }]}}>
-        {props.children}
-    </Animated.View>
-  )
+            });
+        };
+    });
+    return <Animated.View style={{ flex: 1, transform: [{ translateX: slideAnime }] }}>{props.children}</Animated.View>;
 }
